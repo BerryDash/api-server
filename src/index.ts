@@ -1,8 +1,9 @@
 import path from "path";
 import { createCanvas, loadImage } from "canvas";
+import "dotenv/config";
 
 Bun.serve({
-  port: 3000,
+  port: process.env.PORT,
   routes: {
     "/icon": {
       async GET(req: Bun.BunRequest) {
@@ -144,3 +145,5 @@ Bun.serve({
     },
   },
 });
+
+console.log("Server started on port " + process.env.PORT);
