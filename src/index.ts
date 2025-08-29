@@ -42,7 +42,7 @@ Bun.serve({
         if (b < 0 || b > 255) return Response.json({failed: true, reason: "B value is invalid"}, 400);
         if (id < -4 || id > 8) return Response.json({failed: true, reason: "ID value is invalid"}, 400);
 
-        const filePath = path.join(import.meta.dir, "assets/icons/bird_" + id + ".png");
+        const filePath = path.join(import.meta.dir, "assets/icons/" + id + ".png");
         const img = await loadImage(filePath);
 
         const canvas = createCanvas(img.width, img.height);
@@ -111,7 +111,7 @@ Bun.serve({
         if (b < 0 || b > 255) return Response.json({failed: true, reason: "B value is invalid"}, 400);
         if (id < 1 || id > 14) return Response.json({failed: true, reason: "ID value is invalid"}, 400);
 
-        const filePath = path.join(import.meta.dir, "assets/overlays/overlay_" + id + ".png");
+        const filePath = path.join(import.meta.dir, "assets/overlays/" + id + ".png");
         const img = await loadImage(filePath);
 
         const canvas = createCanvas(img.width, img.height);
